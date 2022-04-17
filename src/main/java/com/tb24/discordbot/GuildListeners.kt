@@ -28,9 +28,10 @@ class GuildListeners(private val client: DiscordBot) : ListenerAdapter() {
 	}
 
 	override fun onGuildMemberJoin(event: GuildMemberJoinEvent) {
-		if (event.guild.idLong == BotConfig.get().homeGuildId && client.isProd) {
+		if (event.guild.idLong == BotConfig.get(964940474295152680).homeGuildId && client.isProd) {
 			grantRoleIfInTable(event, "members", "premium")
 			grantRoleIfInTable(event, "admins", "admin.js")
+			
 		}
 	}
 
